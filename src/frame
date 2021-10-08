@@ -1,0 +1,322 @@
+package frame;
+
+import java.awt.BorderLayout;
+import java.awt.Desktop;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextPane;
+import javax.swing.JScrollBar;
+import java.awt.ScrollPane;
+import java.awt.Toolkit;
+import java.awt.Panel;
+
+public class team_about extends JDialog {
+	public static boolean isDispose =false;
+
+	private final JPanel contentPanel = new JPanel();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			team_about dialog = new team_about();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		      double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		      double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		      dialog.setLocation( (int) (width - dialog.getWidth()) / 2,
+		                  (int) (height - dialog.getHeight()) / 2);
+			dialog.setVisible(true);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public team_about() {
+		setTitle("About Team");
+		setBounds(100, 100, 772, 581);
+		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+	      double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	      double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+	     setLocation( (int) (width - this.getWidth()) / 2,
+	                  (int) (height - this.getHeight()) / 2);
+		
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+			isDispose =true;
+			dispose();
+			
+			}
+		});
+	
+			
+		getContentPane().setLayout(new BorderLayout());
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						isDispose =true;
+						dispose();
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+		}
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Software Engineering 4501");
+		lblNewLabel.setBounds(276, 13, 218, 18);
+		contentPanel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("The Maze Game");
+		lblNewLabel_1.setBounds(311, 44, 362, 30);
+		contentPanel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("This project is designed and implemented by:");
+		lblNewLabel_2.setBounds(213, 87, 362, 18);
+		contentPanel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Jian Fan");
+		lblNewLabel_3.setBounds(323, 121, 112, 18);
+		contentPanel.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Jonathan Cruz");
+		lblNewLabel_4.setBounds(286, 148, 125, 18);
+		contentPanel.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Dan Grinchenko\t");
+		lblNewLabel_5.setBounds(296, 183, 118, 18);
+		contentPanel.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Andres Rivera");
+		lblNewLabel_6.setBounds(293, 211, 118, 18);
+		contentPanel.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Kevin Thomas");
+		lblNewLabel_7.setBounds(302, 242, 133, 18);
+		contentPanel.add(lblNewLabel_7);
+		
+		JLabel lblReferences = new JLabel("References");
+		lblReferences.setBounds(48, 302, 103, 18);
+		contentPanel.add(lblReferences);
+		
+		JButton btnNewButton = new JButton("http://www.pyxisinnovation.com/pyxwiki/images/Keyboard_arrow_left.jpg");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("http://www.pyxisinnovation.com/pyxwiki/images/Keyboard_arrow_left.jpg");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnNewButton.setBounds(29, 333, 202, 36);
+		contentPanel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("http://www.pyxisinnovation.com/pyxwiki/index.php?title=File:Keyboard_arrow_right.jpg");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("http://www.pyxisinnovation.com/pyxwiki/index.php?title=File:Keyboard_arrow_right.jpg");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnNewButton_1.setBounds(29, 383, 202, 27);
+		contentPanel.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("http://www.pyxisinnovation.com/pyxwiki/images/Keyboard_arrow_up.jpg");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("http://www.pyxisinnovation.com/pyxwiki/images/Keyboard_arrow_up.jpg");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnNewButton_2.setBounds(29, 419, 202, 27);
+		contentPanel.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("http://www.pyxisinnovation.com/pyxwiki/images/Keyboard_arrow_down.jpg");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("http://www.pyxisinnovation.com/pyxwiki/images/Keyboard_arrow_down.jpg");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+				
+			}
+		});
+		btnNewButton_3.setBounds(29, 459, 202, 27);
+		contentPanel.add(btnNewButton_3);
+		
+		JLabel lblSongs = new JLabel("Game Music");
+		lblSongs.setBounds(339, 302, 72, 18);
+		contentPanel.add(lblSongs);
+		
+		JButton btnNewButton_4 = new JButton("https://www.youtube.com/watch?v=vQgvajVwv_k&list=PLzjkiYUjXuevVG0fTOX4GCTzbU0ooHQ-O&index=22&ab_channel=VolcanBrimstone");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("https://www.youtube.com/watch?v=vQgvajVwv_k&list=PLzjkiYUjXuevVG0fTOX4GCTzbU0ooHQ-O&index=22&ab_channel=VolcanBrimstone");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnNewButton_4.setBounds(298, 338, 160, 27);
+		contentPanel.add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("https://www.youtube.com/watch?v=2ZQLq9qI3Dc&list=PLzjkiYUjXuevVG0fTOX4GCTzbU0ooHQ-O&index=109&ab_channel=Diremagic");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("https://www.youtube.com/watch?v=2ZQLq9qI3Dc&list=PLzjkiYUjXuevVG0fTOX4GCTzbU0ooHQ-O&index=109&ab_channel=Diremagic");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnNewButton_5.setBounds(298, 383, 160, 27);
+		contentPanel.add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("https://youtu.be/Lc2JQb3DkmI");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("https://youtu.be/Lc2JQb3DkmI");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnNewButton_6.setBounds(298, 419, 160, 27);
+		contentPanel.add(btnNewButton_6);
+		
+		JLabel lblNewLabel_8 = new JLabel("Main Menu Music");
+		lblNewLabel_8.setBounds(524, 302, 125, 18);
+		contentPanel.add(lblNewLabel_8);
+		
+		JButton btnNewButton_7 = new JButton("https://www.youtube.com/watch?v=0hEYvdMoF2g&ab_channel=Nintendo-Reuploads");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Desktop desktop = Desktop.getDesktop();   
+				URI uri;
+				try {
+					uri = new URI("https://www.youtube.com/watch?v=0hEYvdMoF2g&ab_channel=Nintendo-Reuploads");
+					desktop.browse(uri);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnNewButton_7.setBounds(503, 338, 189, 27);
+		contentPanel.add(btnNewButton_7);
+		
+		JPanel panel = new JPanel();
+		getContentPane().add(panel, BorderLayout.NORTH);
+	
+	}
+	
+
+}
